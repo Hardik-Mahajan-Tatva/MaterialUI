@@ -1,0 +1,256 @@
+ <button type="button" mat-raised-button>Hello World</button>
+
+<h1 class="mat-h1">This is display 1</h1>
+<h2 class="mat-h2">This is display 2</h2>
+<h3 class="mat-h3">This is display 3</h3>
+<p class="mat-body-1">This is body text</p>
+<p class="mat-body-2">This is secondary body text</p>
+
+<h1 class="mat-headline-1">This is heading 1</h1>
+<h2 class="mat-title">This is heading 2</h2>
+<h3 class="mat-subtitle-1">This is heading 3</h3>
+
+<button type="button" mat-button disableRipple class="ms-2">This is normal mat
+  button</button>
+<button type="button" mat-raised-button class="ms-2">This is normal mat raised
+  button</button>
+<button type="button" mat-flat-button class="ms-2">This is normal mat flat
+  button</button>
+<button type="button" mat-stroked-button class="ms-2">This is normal mat stroked
+  button</button>
+
+<button type="button" mat-icon-button>This is a button</button>
+<button type="button" mat-fab>This is a button</button>
+<button type="button" mat-mini-fab>This is a button</button>
+
+<mat-button-toggle value="bold" #toggleButton>Bold</mat-button-toggle>
+{{toggleButton.checked ? 'Checked' : 'Not checked'}}
+
+<mat-button-toggle-group #toggleGroup="matButtonToggleGroup" multiple>
+  <mat-button-toggle value="Angular">Angular</mat-button-toggle>
+  <mat-button-toggle value="React">React</mat-button-toggle>
+  <mat-button-toggle value="Vue">Vue</mat-button-toggle>
+</mat-button-toggle-group>
+{{toggleGroup.value}}
+
+<mat-icon aria-hidden="false" aria-label="Example home icon"
+  fontIcon="home"></mat-icon>
+
+<div class="m-3"><span matBadge="5">Notifications</span></div>
+<div class="m-3"><span matBadge="5"
+    matBadgePosition="below before">Notifications</span></div>
+<div class="m-3"><span matBadge="5"
+    matBadgePosition="below after">Notifications</span></div>
+<div class="m-3"><span matBadge="5"
+    matBadgePosition="above after">Notifications</span></div>
+
+<mat-progress-spinner value="50"></mat-progress-spinner>
+
+<mat-toolbar color="primary" class="flex flex-row justify-between items-center">
+  <div>Hardik</div>
+  <div>Home</div>
+  <div>About</div>
+  <div>Contact</div>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav [(opened)]="opened">SideNav</mat-sidenav>
+  <mat-sidenav-content>Main</mat-sidenav-content>
+</mat-sidenav-container>
+<button type="button" (click)="opened = !opened">Toggle</button>
+
+<mat-menu #appMenu='matMenu'>
+  <button type="button" mat-menu-item
+    [matMenuTriggerFor]="subMenu">FontEnd</button>
+  <button type="button" mat-menu-item>BackEnd</button>
+</mat-menu>
+
+<button type="button" mat-flat-button [matMenuTriggerFor]="appMenu">Click For
+  the Menu</button>
+
+<mat-menu #subMenu='matMenu'>
+  <button type="button" mat-menu-item
+    [matMenuTriggerFor]="subMenu2">Angular</button>
+  <button type="button" mat-menu-item>React</button>
+  <button type="button" mat-menu-item>View</button>
+</mat-menu>
+<mat-menu #subMenu2='matMenu'>
+  <button type="button" mat-menu-item>Angular</button>
+  <button type="button" mat-menu-item>Angular</button>
+  <button type="button" mat-menu-item>Angular</button>
+</mat-menu>
+
+<mat-menu #lazy='matMenu'>
+  <ng-template matMenuContent>
+    <button type="button" mat-menu-item>Settings</button>
+    <button type="button" mat-menu-item>LogOut</button>
+  </ng-template>
+</mat-menu>
+
+<button type="button" [matMenuTriggerFor]="lazy">Harry</button>
+<button type="button" [matMenuTriggerFor]="lazy">Hardik</button>
+
+<mat-list dense>
+  <mat-list-item>Item 1</mat-list-item>
+  <mat-list-item>Item 2</mat-list-item>
+  <mat-list-item>Item 3</mat-list-item>
+</mat-list>
+
+<mat-nav-list>
+  <a href="#" mat-list-item>Home</a>
+  <a href="#" mat-list-item>About</a>
+  <a href="#" mat-list-item>Service</a>
+</mat-nav-list>
+
+<mat-grid-list cols="2" rowHeight="2:1">
+  <mat-grid-tile>1</mat-grid-tile>
+  <mat-grid-tile>2</mat-grid-tile>
+  <mat-grid-tile>3</mat-grid-tile>
+  <mat-grid-tile>4</mat-grid-tile>
+</mat-grid-list>
+
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Angular Fundamentals
+    </mat-panel-title>
+    <mat-panel-description>
+      Learn the basics of Angular
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <p>This is panel content</p>
+</mat-expansion-panel>
+
+<mat-card>
+  <mat-card-title>
+    Card Title
+  </mat-card-title>
+  <mat-card-content>
+    This is the card content.
+  </mat-card-content>
+  <mat-card-content>
+    <button type="button" mat-flat-button>Login</button>
+  </mat-card-content>
+</mat-card>
+
+<mat-tab-group>
+  <mat-tab label="Angular">Angular Content</mat-tab>
+  <mat-tab label="React">React Content</mat-tab>
+  <mat-tab label="Vue">Vue Content</mat-tab>
+</mat-tab-group>
+
+<mat-horizontal-stepper>
+  <mat-step>Shipping Address</mat-step>
+  <mat-step></mat-step>
+  <mat-step></mat-step>
+</mat-horizontal-stepper>
+
+<mat-form-field floatLabel="auto">
+  <mat-label>Name</mat-label>
+  <input matInput placeholder="Enter your name" required>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-select placeholder="Select a topic" required value="Select">
+    <mat-label>Topic</mat-label>
+    <mat-option value="Angular">Angular</mat-option>
+    <mat-option value="React">React</mat-option>
+    <mat-option value="Vue">Vue</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-select placeholder="Select a topic" required value="Select"
+    multiple="true"
+    label="Topic">
+    <mat-label>Topic</mat-label>
+    <mat-option>None</mat-option>
+    <mat-optgroup label="Web" multiple="true">
+      <mat-option value="Angular">Angular</mat-option>
+      <mat-option value="React">React</mat-option>
+      <mat-option value="Vue">Vue</mat-option>
+    </mat-optgroup>
+    <mat-optgroup label="Mobile" multiple="true">
+      <mat-option value="Angular">Flutter</mat-option>
+      <mat-option value="React">UI</mat-option>
+      <mat-option value="Vue">UX</mat-option>
+    </mat-optgroup>
+  </mat-select>
+</mat-form-field>
+
+<mat-checkbox>
+  Hello
+</mat-checkbox>
+
+<mat-checkbox
+  [(ngModel)]="masterSelected"
+  [indeterminate]="isIndeterminate()"
+  (change)="masterToggle()">
+  Select All
+</mat-checkbox>
+@for (item of items; track $index) {
+<div>
+  <mat-checkbox
+    [(ngModel)]="item.checked"
+    (change)="itemChange()">
+    {{ item.name }}
+  </mat-checkbox>
+</div>
+}
+
+<mat-radio-group>
+  <mat-radio-button value="angular">Angular</mat-radio-button>
+  <mat-radio-button value="react">React</mat-radio-button>
+  <mat-radio-button value="vue">Vue</mat-radio-button>
+</mat-radio-group>
+
+<mat-form-field matTooltip="Welcome my friend" matTooltipShowDelay="2000"
+  matTooltipHideDelay="2000">
+  <label for="Date">Pick a Date</label>
+  <input matInput [matDatepicker]="myDatePicker" name="Date"
+    placeholder="Please select a date">
+  <mat-datepicker-toggle matSuffix [for]="myDatePicker"></mat-datepicker-toggle>
+  <mat-datepicker #myDatePicker></mat-datepicker>
+</mat-form-field>
+
+<button type="button" (click)="openSnackBar('Item deleted', 'undo')">Show
+  SnackBar</button>
+
+<button type="button" mat-raised-button (click)="openDialog()">Open Me</button>
+
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <!-- Position Column -->
+  <ng-container matColumnDef="position">
+    <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="weight">
+    <mat-header-cell *matHeaderCellDef> Weight </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="symbol">
+    <mat-header-cell *matHeaderCellDef> Symbol </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+
+<cdk-virtual-scroll-viewport itemSize="100" class="h-[500px] w-full">
+  <div
+    *cdkVirtualFor="let number of numbers;"
+    class="flex justify-between items-center h-[100px]">
+    <div class=" bg-green-500">{{ number }}</div>
+  </div>
+</cdk-virtual-scroll-viewport>
